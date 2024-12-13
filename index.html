@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天地 Production</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background-color: #000;
+        }
+
+        /* 메인 화면 스타일 */
+        .main-screen {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .main-screen h1 {
+            font-size: 9rem;
+            margin: 0;
+        }
+
+        /* 메뉴 버튼 스타일 */
+        .menu-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-button span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: background-color 0.3s;
+        }
+
+        .menu-list {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .menu-list a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .menu-list a:hover {
+            color: #f39c12;
+        }
+
+        /* 상세 내용 스타일 */
+        .content {
+            background-color: #000;
+            color: #fff;
+            height: 100vh;
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: left;
+            padding: 20px;
+            position: relative;
+        }
+
+        .content.active {
+            display: flex;
+        }
+
+        .content h2 {
+            margin: 20px 0 80px;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .content p, .content ul {
+            margin-top: 0;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .content ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        /* 좌측 하단 회사명 */
+        .company-name {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 1rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <!-- 메인 화면 -->
+    <div class="main-screen">
+        <h1>天地 Production</h1>
+        <button class="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="menu-list">
+            <a href="#" data-target="main">MAIN</a>
+            <a href="#" data-target="about">ABOUT</a>
+            <a href="#" data-target="services">SERVICE</a>
+            <a href="#" data-target="portfolio">PORTFOLIO</a>
+            <a href="#" data-target="contact">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="content" id="about">
+        <button class="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="menu-list">
+            <a href="#" data-target="main">MAIN</a>
+            <a href="#" data-target="about">ABOUT</a>
+            <a href="#" data-target="services">SERVICE</a>
+            <a href="#" data-target="portfolio">PORTFOLIO</a>
+            <a href="#" data-target="contact">CONTACT</a>
+        </div>
+        <h2>ABOUT</h2>
+        <p>
+            영화, 드라마, 광고 등 다양한 콘텐츠 제작 분야에서 최상의 퀄리티와 창의적인 비전을 제공하는 
+            天地 Production은 촬영 전문 회사로서, 고객의 아이디어를 생동감 넘치는 영상으로 구현하는 데 최선을 다하고 있습니다.
+        </p>
+        <p>
+            天地 Production은 최신 장비와 첨단 기술을 활용하여 디테일을 놓치지 않는 촬영을 지향하며, 
+            다양한 프로젝트에서 쌓은 풍부한 경험과 전문성을 바탕으로 독창적이고 감동적인 영상을 제작합니다.
+        </p>
+        <p>
+            저희는 촬영의 모든 과정을 체계적으로 관리하며, 고객의 요구에 맞춘 맞춤형 솔루션을 제공합니다. 
+            창의적인 영상미와 스토리텔링을 통해 브랜드와 작품에 새로운 가치를 더하고자 합니다.
+        </p>
+        <div class="company-name">天地 Production</div>
+    </div>
+
+    <!-- SERVICE -->
+    <div class="content" id="services">
+        <button class="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="menu-list">
+            <a href="#" data-target="main">MAIN</a>
+            <a href="#" data-target="about">ABOUT</a>
+            <a href="#" data-target="services">SERVICE</a>
+            <a href="#" data-target="portfolio">PORTFOLIO</a>
+            <a href="#" data-target="contact">CONTACT</a>
+        </div>
+        <h2>SERVICE</h2>
+        <ul>
+            <li><strong>영화 촬영:</strong> 감각적이고 깊이 있는 영상미를 통해 강렬한 영화적 경험을 제공합니다.</li>
+            <li><strong>드라마 촬영:</strong> 캐릭터와 스토리의 감성을 섬세히 담아낸 장면을 제작합니다.</li>
+            <li><strong>광고 촬영:</strong> 브랜드 메시지를 효과적으로 전달할 수 있는 임팩트 있는 영상을 제작합니다.</li>
+            <li><strong>기획 및 제작 지원:</strong> 촬영 전 기획부터 후반 작업까지 원스톱 서비스를 제공합니다.</li>
+        </ul>
+        <p>
+            저희와 함께라면 꿈꾸던 화면 속 이야기가 현실이 됩니다.<br>
+            언제나 고객의 성공을 위해 함께 고민하며, 최고의 결과를 만들어가는 天地 Production이 되겠습니다.
+        </p>
+        <div class="company-name">天地 Production</div>
+    </div>
+
+    <!-- 기타 상세 페이지 -->
+    <div class="content" id="portfolio">
+        <button class="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="menu-list">
+            <a href="#" data-target="main">MAIN</a>
+            <a href="#" data-target="about">ABOUT</a>
+            <a href="#" data-target="services">SERVICE</a>
+            <a href="#" data-target="portfolio">PORTFOLIO</a>
+            <a href="#" data-target="contact">CONTACT</a>
+        </div>
+        <h2>PORTFOLIO</h2>
+        <p>현재 준비중입니다.</p>
+        <div class="company-name">天地 Production</div>
+    </div>
+
+    <div class="content" id="contact">
+        <button class="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="menu-list">
+            <a href="#" data-target="main">MAIN</a>
+            <a href="#" data-target="about">ABOUT</a>
+            <a href="#" data-target="services">SERVICE</a>
+            <a href="#" data-target="portfolio">PORTFOLIO</a>
+            <a href="#" data-target="contact">CONTACT</a>
+        </div>
+        <h2>CONTACT</h2>
+        <p><strong>CEO:</strong> Michael Kim</p>
+        <p><strong>TEL:</strong> 070-8027-8412</p>
+        <div class="company-name">天地 Production</div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuButtons = document.querySelectorAll(".menu-button");
+            const menuLists = document.querySelectorAll(".menu-list");
+            const contentSections = document.querySelectorAll(".content");
+            const mainScreen = document.querySelector(".main-screen");
+
+            // 메뉴 버튼 클릭 이벤트
+            menuButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const menuList = button.nextElementSibling;
+                    menuList.style.display = menuList.style.display === "block" ? "none" : "block";
+                });
+            });
+
+            // 메뉴에서 페이지 이동 이벤트
+            menuLists.forEach(menu => {
+                menu.addEventListener("click", (e) => {
+                    if (e.target.tagName === "A") {
+                        e.preventDefault();
+                        const targetId = e.target.dataset.target;
+
+                        // 모든 섹션 숨기기
+                        contentSections.forEach(section => section.classList.remove("active"));
+
+                        // 선택된 섹션 보이기
+                        if (targetId === "main") {
+                            mainScreen.style.display = "flex";
+                        } else {
+                            mainScreen.style.display = "none";
+                            document.getElementById(targetId).classList.add("active");
+                        }
+
+                        // 모든 메뉴 닫기
+                        menuLists.forEach(list => list.style.display = "none");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
